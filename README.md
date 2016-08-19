@@ -13,6 +13,8 @@ You need GNU Make, NodeJS, CPython 3.4.
 1. Make a virtualenv. Don't put the virtualenv in this directory or a subdirectory.
 1. Activate the virtualenv and install the requirements file (`pip install -r requirements.txt`).
 1. Install the NodeJS requirements (run `npm install` in the "amazeui" subdirectory).
+1. Run `make amazeui` to generate the amazeUI files.
+1. Run `make html` to generate the website.
 1. Go!
 
 
