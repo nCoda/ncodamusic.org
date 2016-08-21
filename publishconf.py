@@ -11,4 +11,6 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'https://ncodamusic.org'
-DELETE_OUTPUT_DIRECTORY = False
+THEMEURL = '{0}/theme'.format(SITEURL)  # as the SITEURL changes, we have to update this too!
+
+DELETE_OUTPUT_DIRECTORY = True
