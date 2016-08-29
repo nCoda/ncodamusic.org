@@ -112,3 +112,7 @@ TRANS = {
 THEME = 'ncoda_theme'
 COPYRIGHT_YEARS = '2016'
 THEMEURL = '{0}/theme'.format(SITEURL)
+SHOW_CODA_MENU = True  # make topbar logo a dropdown w links to nCoda sites; false is just link to homepage
+URL_PREFIX_TO_ICONS = '{0}/img/icons'.format(THEMEURL)
+TWITTER_ACCOUNT = 'ncodamusic'  # do NOT include the '@'
+DEFAULT_DESCRIPTION = 'nCoda: Making Music Notation Open, Collaborative, and Scriptable'
