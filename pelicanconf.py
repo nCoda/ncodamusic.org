@@ -80,6 +80,7 @@ I18N_UNTRANSLATED_PAGES = 'keep'
 I18N_SUBSITES = {
     'de': {
         'LOCALE': 'de_DE',
+        'COPYRIGHT_ENTITY': 'nCoda und andere',
         # TODO: translate URLs
     },
     'fr': {
@@ -87,9 +88,11 @@ I18N_SUBSITES = {
         'AUTHORS_SAVE_AS': 'auteurs/index.html',
         'AUTHOR_SAVE_AS': 'auteurs/{slug}/index.html',
         'AUTHOR_URL': 'auteurs/{slug}/',
+        'COPYRIGHT_ENTITY': 'nCoda et autres',
     },
     'zh_cn': {
         'LOCALE': 'zh_CN',
+        'COPYRIGHT_ENTITY': 'nCoda&nbsp;与他们',
         # TODO: translate URLs
     },
 }
@@ -110,9 +113,12 @@ TRANS = {
 # Theme Settings
 # --------------
 THEME = 'ncoda_theme'
-COPYRIGHT_YEARS = '2016'
 THEMEURL = '{0}/theme'.format(SITEURL)
 SHOW_CODA_MENU = True  # make topbar logo a dropdown w links to nCoda sites; false is just link to homepage
 URL_PREFIX_TO_ICONS = '{0}/img/icons'.format(THEMEURL)
 TWITTER_ACCOUNT = 'ncodamusic'  # do NOT include the '@'
 DEFAULT_DESCRIPTION = 'nCoda: Making Music Notation Open, Collaborative, and Scriptable'
+
+# copyright line is "&copy; {{ COPYRIGHT_YEARS }} {{ COPYRIGHT_ENTITY }}"
+COPYRIGHT_YEARS = '2016'
+COPYRIGHT_ENTITY = 'nCoda and others'  # set this per language in I18N_SUBSITES
