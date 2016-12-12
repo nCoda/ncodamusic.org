@@ -10,7 +10,7 @@ Setup
 You need GNU Make, NodeJS, CPython 2.7 or 3.4 before you do this.
 
 1. Make sure you cloned all the submodules (`git submodule init` then `git submodule update`).
-1. Make a virtualenv. Don't put the virtualenv in this directory or a subdirectory.
+1. Make a virtualenv with a Python 3.4+ intepreter. Don't put the virtualenv in this directory or a subdirectory.
 1. Activate the virtualenv and install the requirements file (`pip install -r requirements.txt`).
 1. Install the NodeJS requirements (run `npm install` in the "amazeui" subdirectory).
 1. Run `make amazeui` to generate the amazeUI files.
