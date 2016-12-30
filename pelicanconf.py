@@ -90,6 +90,10 @@ I18N_SUBSITES = {
         'AUTHOR_URL': 'auteurs/{slug}/',
         'COPYRIGHT_ENTITY': 'nCoda et autres',
     },
+    'pt': {
+        'LOCALE': 'pt_PT',
+        'COPYRIGHT_ENTITY': 'nCoda e outros',
+    },
     'zh_cn': {
         'LOCALE': 'zh_CN',
         'COPYRIGHT_ENTITY': 'nCoda&nbsp;与他们',
@@ -102,11 +106,12 @@ LANG_NAMES = {
     'de': 'Deutsch',
     'en': 'English',
     'fr': 'Français',
+    'pt': 'Português',
     'zh_cn': '简体中文',
 }
 TRANS = {
-    'Categories': {'en': 'Categories', 'fr': 'Catégories', 'de': 'TODO', 'zh_cn': 'TODO'},
-    'Menu': {'en': 'Menu', 'fr': 'Menu', 'de': 'TODO', 'zh_cn': 'TODO'},
+    'Categories': {'en': 'Categories', 'fr': 'Catégories', 'de': 'TODO', 'pt': 'TODO', 'zh_cn': 'TODO'},
+    'Menu': {'en': 'Menu', 'fr': 'Menu', 'de': 'TODO', 'pt': 'TODO', 'zh_cn': 'TODO'},
 }
 
 
