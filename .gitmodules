@@ -7,6 +7,3 @@
 [submodule "ncoda_theme"]
 	path = ncoda_theme
 	url = ssh://vcs@goldman.ncodamusic.org/diffusion/34/ncoda-pelican-theme.git
-[submodule "output"]
-	path = output
-	url = ssh://vcs@goldman.ncodamusic.org/diffusion/35/ncodamusic-org-deploy.git
