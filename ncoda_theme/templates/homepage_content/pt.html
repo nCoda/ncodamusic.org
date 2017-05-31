@@ -1,0 +1,79 @@
+<h1 class="am-text-center logoheading">
+    <img alt="nCoda" src="{{ THEMEURL }}/img/logos/full-light-bg-optimized.svg">
+</h1>
+<h2 class="am-text-center subheading" style="font-size: 2em">Tornando a notação musical aberta, colaborativa e programável</h2>
+
+<div>
+    <div>
+        nCoda é...
+        <ul>
+            <li>um software que permite a músicos em todo o mundo criarem, analisarem e partilharem documentos de música de uma maneira nova.</li>
+            <li>o grupo de pessoas que constroem o software.</li>
+        </ul>
+        <p>
+            Estamos atualmente na fase de desenvolvimento do <em>protótipo</em>, assim recomendamos
+            que usem nosso software apenas para trabalho experimental. Nós estamos procurando
+            expandir o número de usuários de teste <i>nCoda</i>, e estamos especialmente à procura
+            de novos colaboradores (programadores, tradutores, designers e assim por diante).
+        </p>
+        <p>
+            Se estiver interessado em contribuir, entre em contato no nosso
+            <a href="https://spivak.ncodamusic.org/t/getting-started-with-ncoda">
+                fórum de discussão&nbsp;<span class="am-icon-external-link"></span>
+            </a>!
+        </p>
+    </div>
+
+    <hr class="am-article-divider">
+
+    <h3>Pré-visualização</h3>
+    <ul class="am-gallery am-gallery-overlay am-avg-sm-2">
+        {# NOTE: we could make this even fancier with the amazeUI Handlebars plugin (see AMUI API) #}
+        <li>
+            <figure class="am-gallery-item">
+                <a href="{{ THEMEURL }}/img/homepage/CodeScoreView.png">
+                    <img src="{{ THEMEURL }}/img/homepage/CodeScoreView.png"  alt="">
+                </a>
+                <figcaption class="am-gallery-title">
+                    <dfn>CodeScoreView</dfn>: editar música tanto como código e partitura.
+                </figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure class="am-gallery-item">
+                <a href="{{ THEMEURL }}/img/homepage/StructureView.png">
+                    <img src="{{ THEMEURL }}/img/homepage/StructureView.png" alt="">
+                </a>
+                <figcaption class="am-gallery-title">
+                    <dfn>StructureView</dfn>: navegar e editar uma hierarquia de seções.
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+
+    <hr class="am-article-divider">
+
+    <h3>Tecnologias de componente</h3>
+    <p>
+        <i>nCoda</i> foi construído com um código de fonte aberta de música e robusto, e segue as
+        melhores práticas para o desenvolvimento de software de fonte aberta.
+    </p>
+
+    {% include "homepage_content/tech_notes.html" %}
+
+    <hr class="am-article-divider">
+
+    <h3>Envolva-se!</h3>
+    <p>
+        Confira o nosso protótipo público em
+            <a href="https://goldman.ncodamusic.org/diffusion/NC/">
+                Phabricator&nbsp;<span class="am-icon-external-link"></span>
+            </a>.
+    </p>
+    <p>
+        Junte-se à discussão em
+            <a href="https://spivak.ncodamusic.org/t/getting-started-with-ncoda">
+                Discourse&nbsp;<span class="am-icon-external-link"></span>
+            </a>.
+    </p>
+</div>

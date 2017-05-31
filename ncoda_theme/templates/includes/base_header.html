@@ -1,0 +1,71 @@
+<header class="am-topbar">
+    <h1 class="am-topbar-brand">
+        {% if SHOW_CODA_MENU %}
+            {% include "includes/coda_menu.html" %}
+        {% else %}
+            <a href="{{ SITEURL }}/">
+                <img src="{{ main_siteurl }}/theme/img/logos/coda.png" alt="{{ SITENAME }}">
+            </a>
+        {% endif %}
+    </h1>
+
+    {% if MENUITEMS|length > 0 or (DISPLAY_PAGES_ON_MENU and PAGES|length > 0) or (DISPLAY_CATEGORIES_ON_MENU and categories|length > 0) %}
+    <button
+        class="am-topbar-btn am-topbar-toggle am-btn am-btn-default am-show-sm-only"
+        data-am-collapse="{target: '#topbar-collapse'}">
+        <span class="am-sr-only">{{ TRANS['Menu'][DEFAULT_LANG] }}</span>
+        <span class="am-icon-bars"></span>
+    </button>
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+        <nav>
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+
+                {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for each_page in PAGES %}
+                        <li{% if each_page == page %} class="am-active"{% endif %}>
+                            <a href="{{ SITEURL }}/{{ each_page.url }}">{{ each_page.title }}</a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+
+                {% if DISPLAY_CATEGORIES_ON_MENU and categories|length > 0 %}
+                    <li class="am-dropdown" data-am-dropdown>
+                        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                            {{ TRANS['Categories'][DEFAULT_LANG] }}&nbsp;<span class="am-icon-caret-down"></span>
+                        </a>
+                        <ul class="am-dropdown-content">
+                            {% for cat, _ in categories %}
+                                <li{% if cat == category %} class="am-active"{% endif%}>
+                                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
+    <div class="am-topbar-right">
+        <nav class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+            <button class="am-btn am-btn-primary am-topbar-btn am-dropdown-toggle" data-am-dropdown-toggle>
+                <span class="am-icon-globe"></span>
+                &nbsp;A&nbsp;/&nbsp;文&nbsp;
+                <span class="am-icon-caret-down"></span>
+            </button>
+            <ul class="am-dropdown-content">
+                {% for language, url in extra_siteurls.items()|sort %}
+                    {% if LANG_NAMES and language in LANG_NAMES %}
+                        <li><a href="{{ url }}/">{{ LANG_NAMES[language] }}</a></li>
+                    {% else %}
+                        <li><a href="{{ url }}/">{{ language|upper }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

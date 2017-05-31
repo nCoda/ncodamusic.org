@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {# Set rendering engine for 360 Browser #}
+    <meta name="renderer" content="webkit">
+    {# Avoid extra ads from Baidu #}
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    {# Somehow enables "responsive" stuff #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {# TODO: this <link> to fira.css is temporary! #}
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ main_siteurl }}/theme/css/amazeui.min.css">
+
+    {% block css_extra %}{% endblock css_extra %}
+    {% block head %}{% endblock head %}
+
+    <link rel="canonical" href="{{ SITEURL }}/">
+    <meta name="author" content="{{ AUTHOR }}"/>
+
+    {% block header_meta %}
+    <meta name="description" content="{{ DEFAULT_DESCRIPTION }}"/>
+    {% endblock %}
+
+    {% include "includes/twitter_card.html" %}
+    {% include "includes/favicons.html" %}
+</head>
+
+<body>
+    {% include 'includes/base_header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'includes/base_footer.html' %}
+
+    <script type="text/javascript" src="{{ main_siteurl }}/theme/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ main_siteurl }}/theme/js/amazeui.min.js"></script>
+    {% block js_extra %}
+    {% endblock %}
+</body>
+</html>

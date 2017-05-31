@@ -1,0 +1,13 @@
+<footer class="am-footer am-footer-default">
+    <div>
+        <a href="mailto:{{ CONTACT_EMAIL }}">
+            <span class="am-icon-envelope-o"></span>
+            {{ CONTACT_EMAIL }}
+        </a>
+    </div>
+    {% if COPYRIGHT_YEARS %}
+        <div class="am-footer-miscs">
+            <p>&copy; {{ COPYRIGHT_YEARS }} {{ COPYRIGHT_ENTITY }}</p>
+        </div>
+    {% endif %}
+</footer>
