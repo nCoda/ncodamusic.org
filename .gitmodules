@@ -3,4 +3,4 @@
 	url = https://github.com/getpelican/pelican-plugins.git
 [submodule "amazeui"]
 	path = amazeui
-	url = ssh://vcs@goldman.ncodamusic.org/diffusion/AMUI/amazeUI.git
+	url = https://github.com/nCoda/amazeui.git
