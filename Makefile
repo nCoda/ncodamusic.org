@@ -8,6 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 AMAZEUI_DIR=$(BASEDIR)/amazeui
+AMAZEUI_GULP=$(AMAZEUI_DIR)/node_modules/.bin/gulp
 AMAZEUI_TASKS=$(AMAZEUI_DIR)/tools/tasks
 
 
@@ -46,7 +47,7 @@ install-amazeui-deps:
 amazeui:
 	rm -f $(AMAZEUI_TASKS)/config.json
 	ln -s $(AMAZEUI_TASKS)/config-ncodamusic.json $(AMAZEUI_TASKS)/config.json
-	cd amazeui && gulp customize
+	cd $(AMAZEUI_DIR) && $(AMAZEUI_GULP) customize
 	rm $(AMAZEUI_TASKS)/config.json
 
 
