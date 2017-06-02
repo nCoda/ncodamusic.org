@@ -77,4 +77,12 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-.PHONY: amazeui html help clean regenerate serve devserver publish
+
+netlify-publish: update-submodules publish
+
+
+update-submodules:
+	git submodule update
+
+
+.PHONY: amazeui html help clean regenerate serve devserver publish update-submodules netlify-publish
