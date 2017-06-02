@@ -78,11 +78,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 
-netlify-publish: update-submodules publish
+netlify-publish: amazeui publish
 
 
-update-submodules:
-	git submodule update
-
-
-.PHONY: amazeui html help clean regenerate serve devserver publish update-submodules netlify-publish
+.PHONY: amazeui html help clean regenerate serve devserver publish netlify-publish
