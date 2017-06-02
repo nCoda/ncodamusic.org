@@ -7,7 +7,8 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-AMAZEUI_TASKS=$(BASEDIR)/amazeui/tools/tasks
+AMAZEUI_DIR=$(BASEDIR)/amazeui
+AMAZEUI_TASKS=$(AMAZEUI_DIR)/tools/tasks
 
 
 DEBUG ?= 0
@@ -36,6 +37,10 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
+
+
+install-amazeui-deps:
+	cd $(AMAZEUI_DIR) && npm install
 
 
 amazeui:
@@ -78,11 +83,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 
-netlify-publish: update-submodules publish
+netlify-publish: install-amazeui-deps amazeui publish
 
 
-update-submodules:
-	git submodule update
-
-
-.PHONY: amazeui html help clean regenerate serve devserver publish update-submodules netlify-publish
+.PHONY: amazeui html help clean regenerate serve devserver publish netlify-publish install-amazeui-deps
