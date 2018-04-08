@@ -1,18 +1,26 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
+
 from __future__ import unicode_literals
+import os
+
+
+PUBLISH_MODE = os.getenv('PELICAN_PUBLISH', False)
 
 AUTHOR = 'nCoda Contributors'
 SITENAME = 'nCoda'
+SITE_NAME = SITENAME
 CONTACT_EMAIL = 'contact@ncodamusic.org'
-SITEURL = 'http://localhost:8000'  # changed in publishconf.py
+SITEURL = os.getenv('URL', '')
 RELATIVE_URLS = False
+TIMEZONE = 'America/Toronto'
+TIME_ZONE = TIMEZONE
+DELETE_OUTPUT_DIRECTORY = False  # handled by the Makefile
+
+DEFAULT_LANG = 'en'
 
 PATH = 'content'
 
-TIMEZONE = 'America/Toronto'
-
-DEFAULT_LANG = 'en'
 
 # turn off feed generation
 FEED_ALL_ATOM = None
@@ -125,5 +133,5 @@ TWITTER_ACCOUNT = 'ncodamusic'  # do NOT include the '@'
 DEFAULT_DESCRIPTION = 'nCoda: Making Music Notation Open, Collaborative, and Scriptable'
 
 # copyright line is "&copy; {{ COPYRIGHT_YEARS }} {{ COPYRIGHT_ENTITY }}"
-COPYRIGHT_YEARS = '2016'
+COPYRIGHT_YEARS = '2018'
 COPYRIGHT_ENTITY = 'nCoda and others'  # set this per language in I18N_SUBSITES
