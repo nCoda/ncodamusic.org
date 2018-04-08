@@ -29,19 +29,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('this is LINKS in pelicanconf.py', '#'),)
-
-SOCIAL = (('this is SOCIAL in pelicanconf.py', '#'),
-          ('Another social link', '#'),)
-
 DEFAULT_PAGINATION = 10
-
-# this preserves a git repository in the "output" directory
-DELETE_OUTPUT_DIRECTORY = False
-OUTPUT_RETENTION = ('.git', 'README.md')
 
 PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = [
