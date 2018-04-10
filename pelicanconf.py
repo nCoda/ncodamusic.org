@@ -17,8 +17,6 @@ TIMEZONE = 'America/Toronto'
 TIME_ZONE = TIMEZONE
 DELETE_OUTPUT_DIRECTORY = False  # handled by the Makefile
 
-DEFAULT_LANG = 'en'
-
 PATH = 'content'
 
 
@@ -46,28 +44,26 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 
 
-# These settings determine the pathname used to generate, and the URLs used to point to, the
-# different kinds of pages. These can be translated in the I18N_SUBSITES dictionary.
+# Disable unnecessary pages
+CATEGORY_SAVE_AS = ''
+TAG_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+ARCHIVES_SAVE_AS = ''
+AUTHORS_SAVE_AS = ''
+CATEGORIES_SAVE_AS = ''
+TAGS_SAVE_AS = ''
+
+# Set URLs for other pages
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
 PAGE_URL = '{slug}/'
-YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
-CATEGORIES_SAVE_AS = 'categories/index.html'
-CATEGORY_SAVE_AS = 'categories/{slug}/index.html'
-CATEGORY_URL = 'categories/{slug}/'
-TAGS_SAVE_AS = 'tags/index.html'
-TAG_SAVE_AS = 'tags/{slug}/index.html'
-TAG_URL = 'tags/{slug}/'
-AUTHORS_SAVE_AS = 'authors/index.html'
-AUTHOR_SAVE_AS = 'authors/{slug}/index.html'
-AUTHOR_URL = 'authors/{slug}/'
 
 
 # l10n/i18n settings
 # ------------------
 # mapping: language_code -> settings_overrides_dict
+DEFAULT_LANG = 'en'
 LOCALE = 'en_US'
 # by default, untranslated pages are still outputted
 I18N_UNTRANSLATED_ARTICLES = 'keep'
@@ -77,13 +73,9 @@ I18N_SUBSITES = {
     'de': {
         'LOCALE': 'de_DE',
         'COPYRIGHT_ENTITY': 'nCoda und andere',
-        # TODO: translate URLs
     },
     'fr': {
         'LOCALE': 'fr_FR',
-        'AUTHORS_SAVE_AS': 'auteurs/index.html',
-        'AUTHOR_SAVE_AS': 'auteurs/{slug}/index.html',
-        'AUTHOR_URL': 'auteurs/{slug}/',
         'COPYRIGHT_ENTITY': 'nCoda et autres',
     },
     'pt': {
@@ -93,9 +85,9 @@ I18N_SUBSITES = {
     'zh_cn': {
         'LOCALE': 'zh_CN',
         'COPYRIGHT_ENTITY': 'nCoda&nbsp;与他们',
-        # TODO: translate URLs
     },
 }
+
 
 # translations for the theme
 LANG_NAMES = {
@@ -108,6 +100,15 @@ LANG_NAMES = {
 TRANS = {
     'Categories': {'en': 'Categories', 'fr': 'Catégories', 'de': 'TODO', 'pt': 'TODO', 'zh_cn': 'TODO'},
     'Menu': {'en': 'Menu', 'fr': 'Menu', 'de': 'TODO', 'pt': 'TODO', 'zh_cn': 'TODO'},
+}
+
+
+# Jinja2 Settings
+# ---------------
+JINJA_ENVIRONMENT = {
+    'extensions': [
+        'jinja2.ext.i18n',  # required for i18n_subsites Pelican extension
+    ],
 }
 
 
