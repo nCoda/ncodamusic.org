@@ -45,7 +45,7 @@ amazeui:
 	rm $(AMAZEUI_TASKS)/config.json
 
 build-html: $(OUTPUT_DIR)/index.html
-$(OUTPUT_DIR)/index.html: $(INPUT_DIR)/**/*.rst $(THEME_DIR)/templates/**/*.html $(THEME_DIR)/templates/*.html
+$(OUTPUT_DIR)/index.html: pelicanconf.py $(INPUT_DIR)/**/*.rst $(THEME_DIR)/templates/**/*.html $(THEME_DIR)/templates/*.html
 	$(PELICAN) $(INPUT_DIR) -o $(OUTPUT_DIR) -s $(CONF_FILE) $(PELICAN_OPTS)
 
 
