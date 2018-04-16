@@ -1,6 +1,3 @@
 [submodule "pelican-plugins"]
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
-[submodule "amazeui"]
-	path = amazeui
-	url = https://github.com/nCoda/amazeui.git
