@@ -23,7 +23,8 @@ help:
 	@echo 'Makefile for ncodamusic.org                                               '
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
-	@echo '   make amazeui                        (re)generate amazeUI theme         '
+	@echo '   make build-css                      (re)generate the CSS only          '
+	@echo '   make build-html                     (re)generate the HTML only         '
 	@echo '   make build                          (re)generate the web site          '
 	@echo '   make publish                        generate using production settings '
 	@echo '   make netlify-publish                generate using settings for Netlify'
@@ -38,7 +39,8 @@ install-amazeui-deps: $(AMAZEUI_DIR)/node_modules/.bin/gulp
 $(AMAZEUI_DIR)/node_modules/.bin/gulp:
 	cd $(AMAZEUI_DIR) && npm install
 
-amazeui:
+build-css: $(AMAZEUI_DIR)/dist/customized/amazeui.custom.min.css
+$(AMAZEUI_DIR)/dist/customized/amazeui.custom.min.css: $(AMAZEUI_DIR)/less/themes/ncodamusic.org/*.less
 	rm -f $(AMAZEUI_TASKS)/config.json
 	ln -s $(AMAZEUI_TASKS)/config-ncodamusic.json $(AMAZEUI_TASKS)/config.json
 	cd $(AMAZEUI_DIR) && $(AMAZEUI_GULP) customize
@@ -63,7 +65,7 @@ $(OUTPUT_DIR)/index.html: pelicanconf.py $(INPUT_DIR)/**/*.rst $(THEME_DIR)/temp
 # 	sassc --output-style=expanded --sourcemap $(MAIN_SASS_FILE) $(MAIN_CSS_FILE)
 
 
-build: amazeui build-html
+build: build-css build-html
 
 
 # publish: clean build-html $(MAIN_CSS_FILE) images
@@ -74,4 +76,4 @@ publish: clean build
 netlify-publish: install-amazeui-deps publish
 
 
-.PHONY: amazeui help clean publish netlify-publish install-amazeui-deps
+.PHONY: build-css help clean publish netlify-publish install-amazeui-deps
