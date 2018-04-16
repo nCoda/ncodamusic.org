@@ -8,15 +8,11 @@ OUTPUT_DIR=$(BASE_DIR)/output
 CONF_FILE=$(BASE_DIR)/pelicanconf.py
 
 THEME_DIR=$(BASE_DIR)/ncoda_theme
-# SASS_DIR=$(THEME_DIR)/static/css
-# MAIN_SASS_FILE=$(SASS_DIR)/main.scss
-# CSS_DIR=$(OUTPUT_DIR)/static/css
-# MAIN_CSS_FILE=$(CSS_DIR)/main.css
-# CSS_SOURCEMAP=$(CSS_DIR)/main.css.map
-
-AMAZEUI_DIR=$(BASE_DIR)/amazeui
-AMAZEUI_GULP=$(AMAZEUI_DIR)/node_modules/.bin/gulp
-AMAZEUI_TASKS=$(AMAZEUI_DIR)/tools/tasks
+SASS_DIR=$(BASE_DIR)/bulma_theme
+MAIN_SASS_FILE=$(SASS_DIR)/main.scss
+CSS_DIR=$(OUTPUT_DIR)/theme/css
+MAIN_CSS_FILE=$(CSS_DIR)/main.css
+CSS_SOURCEMAP=$(CSS_DIR)/main.css.map
 
 
 help:
@@ -35,45 +31,37 @@ help:
 clean:
 	@rm -rf $(OUTPUT_DIR)/*
 
-install-amazeui-deps: $(AMAZEUI_DIR)/node_modules/.bin/gulp
-$(AMAZEUI_DIR)/node_modules/.bin/gulp:
-	cd $(AMAZEUI_DIR) && npm install
 
-build-css: $(AMAZEUI_DIR)/dist/customized/amazeui.custom.min.css
-$(AMAZEUI_DIR)/dist/customized/amazeui.custom.min.css: $(AMAZEUI_DIR)/less/themes/ncodamusic.org/*.less
-	rm -f $(AMAZEUI_TASKS)/config.json
-	ln -s $(AMAZEUI_TASKS)/config-ncodamusic.json $(AMAZEUI_TASKS)/config.json
-	cd $(AMAZEUI_DIR) && $(AMAZEUI_GULP) customize
-	rm $(AMAZEUI_TASKS)/config.json
+node_modules/bulma/bulma.sass:
+	yarn
+
 
 build-html: $(OUTPUT_DIR)/index.html
 $(OUTPUT_DIR)/index.html: pelicanconf.py $(INPUT_DIR)/**/*.rst $(THEME_DIR)/templates/**/*.html $(THEME_DIR)/templates/*.html
 	$(PELICAN) $(INPUT_DIR) -o $(OUTPUT_DIR) -s $(CONF_FILE) $(PELICAN_OPTS)
 
 
-# build-sass: $(MAIN_CSS_FILE)
-# $(MAIN_CSS_FILE): $(SASS_DIR)/*.scss
-# 	@rm -rf $(CSS_DIR)/*
-# 	@mkdir -p $(CSS_DIR)
-# 	sassc --output-style=compressed $(MAIN_SASS_FILE) $(MAIN_CSS_FILE)
+build-css: $(MAIN_CSS_FILE)
+$(MAIN_CSS_FILE): node_modules/bulma/bulma.sass $(SASS_DIR)/*.scss
+	@rm -rf $(CSS_DIR)/*
+	@mkdir -p $(CSS_DIR)
+	sassc --output-style=compressed $(MAIN_SASS_FILE) $(MAIN_CSS_FILE)
 
 
-# build-sass-debug: $(CSS_SOURCEMAP)
-# $(CSS_SOURCEMAP): $(SASS_DIR)/*.scss
-# 	@rm -rf $(CSS_DIR)/*
-# 	@mkdir -p $(CSS_DIR)
-# 	sassc --output-style=expanded --sourcemap $(MAIN_SASS_FILE) $(MAIN_CSS_FILE)
+build-css-debug: $(CSS_SOURCEMAP)
+$(CSS_SOURCEMAP): node_modules/bulma/bulma.sass $(SASS_DIR)/*.scss
+	@rm -rf $(CSS_DIR)/*
+	@mkdir -p $(CSS_DIR)
+	sassc --output-style=expanded --sourcemap $(MAIN_SASS_FILE) $(MAIN_CSS_FILE)
 
 
 build: build-css build-html
 
 
-# publish: clean build-html $(MAIN_CSS_FILE) images
-# 	rm -rf $(CSS_DIR)/*.scss
 publish: clean build
 
 
-netlify-publish: install-amazeui-deps publish
+netlify-publish: publish
 
 
-.PHONY: build-css help clean publish netlify-publish install-amazeui-deps
+.PHONY: build-css help clean publish netlify-publish

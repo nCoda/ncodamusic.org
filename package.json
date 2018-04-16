@@ -1,0 +1,13 @@
+{
+  "name": "ncodamusic.org",
+  "version": "1.0.0",
+  "description": "The ncodamusic.org website",
+  "main": "index.js",
+  "repository": "ssh://vcs@goldman.ncodamusic.org/diffusion/33/ncodamusic-org-main-repository.git",
+  "author": "nCoda Contributors <music@ncodamusic.org>",
+  "license": "GPLv3+",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.7.0"
+  }
+}
