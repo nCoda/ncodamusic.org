@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{# NB: it's an alphabetical list of languages #}
+
+{% block content %}
+<div class="am-container">
+    <h1 class="am-text-center logoheading">
+        <img alt="nCoda" src="{{ THEMEURL }}/img/logos/full-light-bg-optimized.svg">
+    </h1>
+    <h2 class="am-text-center subheading" style="font-size: 2.25em">{{ page.subtitle }}</h2>
+    
+    {{ page.content }}
+
+    <hr class="am-article-divider">
+    
+    <h3>{{ page.preview_title }}</h3>
+    <ul class="am-gallery am-gallery-overlay am-avg-sm-2">
+        {# NOTE: we could make this even fancier with the amazeUI Handlebars plugin (see AMUI API) #}
+        <li>
+            <figure class="am-gallery-item">
+                <a href="{{ THEMEURL }}/img/homepage/CodeScoreView.png">
+                    <img src="{{ THEMEURL }}/img/homepage/CodeScoreView.png" alt="">
+                </a>
+                <figcaption class="am-gallery-title">
+                    {{ page.preview_csv_caption }}
+                </figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure class="am-gallery-item">
+                <a href="{{ THEMEURL }}/img/homepage/StructureView.png">
+                    <img src="{{ THEMEURL }}/img/homepage/StructureView.png" alt="">
+                </a>
+                <figcaption class="am-gallery-title">
+                    {{ page.preview_sv_caption }}
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+    
+    <hr class="am-article-divider">
+    
+    <h3>{{ page.component_technologies }}</h3>
+    <p>{{ page.component_technologies_blurb }}</p>
+    
+    {% include "homepage_content/tech_notes.html" %}
+    
+    <hr class="am-article-divider">
+    
+    <h3>{{ page.get_involved }}</h3>
+    <p>
+        {{ page.look_at_phabricator }}
+        <a href="https://goldman.ncodamusic.org/diffusion/NC/">
+            Phabricator&nbsp;
+            <span class="am-icon-external-link"></span>
+        </a>.
+    </p>
+    <p>
+        {{ page.look_at_discourse }}
+        <a href="https://spivak.ncodamusic.org/t/getting-started-with-ncoda">
+            Discourse&nbsp;
+            <span class="am-icon-external-link"></span>
+        </a>.
+    </p>
+</div>
+{% endblock content %}
