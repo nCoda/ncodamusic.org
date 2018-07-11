@@ -70,18 +70,6 @@ I18N_UNTRANSLATED_ARTICLES = 'keep'
 I18N_UNTRANSLATED_PAGES = 'keep'
 # locale-specific overrides
 I18N_SUBSITES = {
-    'de': {
-        'LOCALE': 'de_DE',
-        'COPYRIGHT_ENTITY': 'nCoda und andere',
-    },
-    'fr': {
-        'LOCALE': 'fr_FR',
-        'COPYRIGHT_ENTITY': 'nCoda et autres',
-    },
-    'pt': {
-        'LOCALE': 'pt_PT',
-        'COPYRIGHT_ENTITY': 'nCoda e outros',
-    },
     'zh_cn': {
         'LOCALE': 'zh_CN',
         'COPYRIGHT_ENTITY': 'nCoda&nbsp;与他们',
