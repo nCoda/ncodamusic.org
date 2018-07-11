@@ -21,10 +21,20 @@ nCoda 是：
 - 软件使世界各地音乐家的创作，分析和共享乐谱以新的方式。
 - 人们编写这个软件。
 
-We're currently in the *alpha phase* of development, so we recommend using our software for
-experimental work only. We are looking to expand the number of users testing *nCoda*,
-and we are especially looking for new contributors (programmers, translators, designers, and so on).
+我们最近改变了方向。
+nCoda 现在是 Atom 文本编辑器的一组扩展。
+未来的时候我们给大家一个 nCoda 软件包。
+现在需要灌每一个软件包：
 
-If you're interested in contributing, get in touch on our `discussion board <https://spivak.ncodamusic.org/t/getting-started-with-ncoda>`_!
+- `mei-tools-atom <https://atom.io/packages/mei-tools-atom>`_
+- `abjadcompile <https://atom.io/packages/abjadcompile>`_
 
-你可以 `在这里下载 mac <https://github.com/nCoda/macOS/releases>`_ 的 nCoda 测试版本，或者 `在这里下载 Linux <https://github.com/nCoda/Linux_Bundles/releases>`_ 版本。
+
+欢迎联系我们了解更多
+-------------------------
+
+我们渴望收到大家的来信。就可以：
+
+- `写在我们的讨论平台王 <https://spivak.ncodamusic.org/t/getting-started-with-ncoda>`_
+- `加入我们的聊天室 <https://chat.ncodamusic.org>`_
+- `发送电子邮件给我们 <mailto:contact@ncodamusic.org>`_

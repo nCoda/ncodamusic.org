@@ -21,11 +21,19 @@ nCoda is...
 - software that enables musicians across the world to create, analyze, and share music documents in a new way.
 - the people building that software.
 
-We're currently in the *alpha phase* of development, so we recommend using our software for
-experimental work only. We are looking to expand the number of users testing *nCoda*,
-and we are especially looking for new contributors (programmers, translators, designers, and so on).
+We have recently changed direction. We are now building a collection of packages for the *Atom*
+text editor. In the future, we will offer a single "nCoda" package that installs everything at once.
+For now, we list our *Atom* packages here:
 
-If you're interested in contributing, get in touch on our `discussion board <https://spivak.ncodamusic.org/t/getting-started-with-ncoda>`_!
+- `mei-tools-atom <https://atom.io/packages/mei-tools-atom>`_
+- `abjadcompile <https://atom.io/packages/abjadcompile>`_
 
-You can download the current (alpha) release of `nCoda for macOS here <https://github.com/nCoda/macOS/releases>`_.
-Or download the `Linux release here <https://github.com/nCoda/Linux_Bundles/releases>`_.
+
+Get Involved, Contact Us!
+-------------------------
+
+We're eager to hear from you! You can...
+
+- Use the `discussion board <https://spivak.ncodamusic.org/t/getting-started-with-ncoda>`_.
+- Join our `chat channel <https://chat.ncodamusic.org>`_.
+- Send us an `email <mailto:contact@ncodamusic.org>`_.
