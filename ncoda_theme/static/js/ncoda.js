@@ -1,5 +1,5 @@
 (function () {
-    function addNofollowToLinks() {
+    function modifyExternalLinks() {
         'use strict';
         if (typeof document.querySelectorAll !== 'function') {
             return;
@@ -12,13 +12,14 @@
         for (var i = 0; i < externalLinksLength; i++) {
             if (typeof externalLinks[i].setAttribute === 'function') {
                 externalLinks[i].setAttribute('rel', '_nofollow');
+                externalLinks[i].setAttribute('target', '_blank');
             }
         }
     }
 
     if ($ && typeof $.when === 'function') {
-        $.when($.ready).then(addNofollowToLinks);
+        $.when($.ready).then(modifyExternalLinks);
     } else {
-        document.onload = addNofollowToLinks;
+        document.onload = modifyExternalLinks;
     }
 })();
